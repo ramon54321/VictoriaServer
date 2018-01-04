@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableCombatServer", "TableCombatServer\TableCombatServer.csproj", "{D81B915D-1E3B-4AE6-8DC7-7833E4D12DA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VictoriaServer", "VictoriaServer\VictoriaServer.csproj", "{F5B78D3F-58ED-42C1-9698-17A6D0041103}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D81B915D-1E3B-4AE6-8DC7-7833E4D12DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D81B915D-1E3B-4AE6-8DC7-7833E4D12DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D81B915D-1E3B-4AE6-8DC7-7833E4D12DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D81B915D-1E3B-4AE6-8DC7-7833E4D12DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5B78D3F-58ED-42C1-9698-17A6D0041103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5B78D3F-58ED-42C1-9698-17A6D0041103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5B78D3F-58ED-42C1-9698-17A6D0041103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5B78D3F-58ED-42C1-9698-17A6D0041103}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A3098645-A211-4D51-A61C-15C227E70A74}
+		SolutionGuid = {69DA8E2F-055A-4552-9D62-D32DEA19202E}
 	EndGlobalSection
 EndGlobal
