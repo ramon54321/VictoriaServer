@@ -1,0 +1,710 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ether.Network</name>
+    </assembly>
+    <members>
+        <member name="T:Ether.Network.Exceptions.EtherClientNotFoundException">
+            <summary>
+            Represents an Ether.Network client not found exception.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherClientNotFoundException.#ctor(System.Guid)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherClientNotFoundException"/>.
+            </summary>
+            <param name="clientId">Client Unique Id</param>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherClientNotFoundException.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherClientNotFoundException"/>.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherClientNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherClientNotFoundException"/>.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:Ether.Network.Exceptions.EtherConfigurationException">
+            <summary>
+            Represents an Ether.Network configuration exception.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherConfigurationException.#ctor">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherConfigurationException"/>.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherConfigurationException.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherConfigurationException"/>.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:Ether.Network.Exceptions.EtherDisconnectedException">
+            <summary>
+            Represents an Ether.Network disconnected exception.
+            </summary>
+            <remarks>
+            This exception is thrown when a client is disconnected from the server.
+            </remarks>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherDisconnectedException.#ctor">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherDisconnectedException"/> instance.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherDisconnectedException.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherDisconnectedException"/> instance.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherDisconnectedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherDisconnectedException"/> instance.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:Ether.Network.Exceptions.EtherException">
+            <summary>
+            Represents a generic Ether.Network exception.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherException.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherException"/>.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherException"/> with an inner exception.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:Ether.Network.Exceptions.EtherPacketException">
+            <summary>
+            Represents an Ether.Network packet exception.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherPacketException.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherPacketException"/>.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Ether.Network.Exceptions.EtherPacketException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Exceptions.EtherPacketException"/> with an inner exception.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:Ether.Network.INetClient">
+            <summary>
+            <see cref="T:Ether.Network.INetClient"/> interface.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.INetClient.Id">
+            <summary>
+            Gets the <see cref="T:Ether.Network.INetClient"/> unique Id.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.INetClient.IsConnected">
+            <summary>
+            Gets the <see cref="T:Ether.Network.INetClient"/> connected state.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.INetClient.Connect">
+            <summary>
+            Connects to a remote server.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.INetClient.Disconnect">
+            <summary>
+            Disconnects from the remote server.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.INetClient.Send(Ether.Network.Packets.NetPacketBase)">
+            <summary>
+            Sends packets to the remote server.
+            </summary>
+            <param name="packet"></param>
+        </member>
+        <member name="T:Ether.Network.INetServer">
+            <summary>
+            NetServer interface.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.INetServer.IsRunning">
+            <summary>
+            Gets the <see cref="T:Ether.Network.INetServer"/> running state.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.INetServer.Start">
+            <summary>
+            Start the server.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.INetServer.Stop">
+            <summary>
+            Stop the server.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.INetServer.DisconnectClient(System.Guid)">
+            <summary>
+            Disconnects a client from the server.
+            </summary>
+            <param name="clientId">Client unique id</param>
+        </member>
+        <member name="T:Ether.Network.NetClient">
+            <summary>
+            Managed TCP client.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetClient.Id">
+            <summary>
+            Gets the <see cref="T:Ether.Network.NetClient"/> unique Id.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetClient.Socket">
+            <summary>
+            Gets the <see cref="T:Ether.Network.NetClient"/> socket.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetClient.IsConnected">
+            <summary>
+            Gets the <see cref="T:Ether.Network.NetClient"/> connected state.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetClient.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.NetClient"/> instance.
+            </summary>
+            <param name="host">Remote host or ip</param>
+            <param name="port">Remote port</param>
+            <param name="bufferSize">Buffer size</param>
+        </member>
+        <member name="M:Ether.Network.NetClient.Connect">
+            <summary>
+            Connect to the remote host.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetClient.Disconnect">
+            <summary>
+            Disconnects the <see cref="T:Ether.Network.NetClient"/>?
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetClient.Send(Ether.Network.Packets.NetPacketBase)">
+            <summary>
+            Sends a packet through the network.
+            </summary>
+            <param name="packet"></param>
+        </member>
+        <member name="M:Ether.Network.NetClient.HandleMessage(Ether.Network.Packets.NetPacketBase)">
+            <summary>
+            Triggered when the <see cref="T:Ether.Network.NetClient"/> receives a packet.
+            </summary>
+            <param name="packet"></param>
+        </member>
+        <member name="M:Ether.Network.NetClient.OnConnected">
+            <summary>
+            Triggered when the client is connected to the remote end point.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetClient.OnDisconnected">
+            <summary>
+            Triggered when the client is disconnected from the remote end point.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetClient.SplitPackets(System.Byte[])">
+            <summary>
+            Split an incoming buffer from the network in a collection of <see cref="T:Ether.Network.Packets.NetPacketBase"/>.
+            </summary>
+            <param name="buffer">Incoming data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ether.Network.NetClient.StartConnect(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Starts the connect async operation.
+            </summary>
+            <param name="address">Remote address</param>
+            <param name="port">Remote port</param>
+        </member>
+        <member name="M:Ether.Network.NetClient.ProcessConnect(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Process the connect async operation.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Ether.Network.NetClient.StartReceive(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Starts the receive async operation.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Ether.Network.NetClient.ProcessReceive(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Process the receive async operation.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Ether.Network.NetClient.IO_Completed(System.Object,System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Triggered when a <see cref="T:System.Net.Sockets.SocketAsyncEventArgs"/> async operation is completed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Ether.Network.NetClient.CreateSocketAsync">
+            <summary>
+            Creates a <see cref="T:System.Net.Sockets.SocketAsyncEventArgs"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ether.Network.NetClient.Dispose">
+            <summary>
+            Dispose the <see cref="T:Ether.Network.NetClient"/> instance.
+            </summary>
+        </member>
+        <member name="T:Ether.Network.NetConnection">
+            <summary>
+            Net connection representing a connection.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetConnection.SendAction">
+            <summary>
+            Gets or sets the SendAction.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetConnection.Id">
+            <summary>
+            Gets the generated unique Id of the connection.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetConnection.Socket">
+            <summary>
+            Gets the connection socket.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetConnection.#ctor">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.NetConnection"/> instance.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetConnection.Initialize(System.Net.Sockets.Socket,System.Action{Ether.Network.NetConnection,System.Byte[]})">
+            <summary>
+            Initialize this <see cref="T:Ether.Network.NetConnection"/> instance.
+            </summary>
+            <param name="socket">Socket</param>
+            <param name="sendAction">Action to send a buffer through the network.</param>
+        </member>
+        <member name="M:Ether.Network.NetConnection.HandleMessage(Ether.Network.Packets.NetPacketBase)">
+            <summary>
+            Handle packets.
+            </summary>
+            <param name="packet">Packet recieved.</param>
+        </member>
+        <member name="M:Ether.Network.NetConnection.Send(Ether.Network.Packets.NetPacketBase)">
+            <summary>
+            Send a packet to this client.
+            </summary>
+            <param name="packet"></param>
+        </member>
+        <member name="M:Ether.Network.NetConnection.SendTo(Ether.Network.NetConnection,Ether.Network.Packets.NetPacketBase)">
+            <summary>
+            Send a packet to the client passed as parameter.
+            </summary>
+            <param name="destClient">Destination client</param>
+            <param name="packet">Packet to send</param>
+        </member>
+        <member name="M:Ether.Network.NetConnection.SendTo(System.Collections.Generic.ICollection{Ether.Network.NetConnection},Ether.Network.Packets.NetPacketBase)">
+            <summary>
+            Send to a collection of clients.
+            </summary>
+            <param name="clients">Clients</param>
+            <param name="packet">Packet to send</param>
+        </member>
+        <member name="M:Ether.Network.NetConnection.Dispose">
+            <summary>
+            Dispose the NetConnection resources.
+            </summary>
+        </member>
+        <member name="T:Ether.Network.NetServer`1">
+            <summary>
+            Managed TCP socket server.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Ether.Network.NetServer`1.Socket">
+            <summary>
+            Gets the <see cref="T:Ether.Network.NetServer`1"/> listening socket.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetServer`1.Configuration">
+            <summary>
+            Gets the <see cref="T:Ether.Network.NetServer`1"/> configuration
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetServer`1.IsRunning">
+            <summary>
+            Gets the <see cref="T:Ether.Network.NetServer`1"/> running state.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetServer`1.Clients">
+            <summary>
+            Gets the connected client.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.#ctor">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.NetServer`1"/> instance.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.Start">
+            <summary>
+            Initialize and start the server.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.Stop">
+            <summary>
+            Stop the server.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.DisconnectClient(System.Guid)">
+            <summary>
+            Disconnects the client from this server.
+            </summary>
+            <param name="clientId">Client unique Id</param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.Initialize">
+            <summary>
+            Initialize the server resourrces.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.OnClientConnected(`0)">
+            <summary>
+            Triggered when a new client is connected to the server.
+            </summary>
+            <param name="connection"></param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.OnClientDisconnected(`0)">
+            <summary>
+            Triggered when a client disconnects from the server.
+            </summary>
+            <param name="connection"></param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.OnError(System.Exception)">
+            <summary>
+            Triggered when an error occurs on the server.
+            </summary>
+            <param name="exception">Exception</param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.SplitPackets(System.Byte[])">
+            <summary>
+            Split an incoming network buffer.
+            </summary>
+            <param name="buffer">Incoming data buffer</param>
+            <returns>Readonly collection of <see cref="T:Ether.Network.Packets.NetPacketBase"/></returns>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.StartAccept">
+            <summary>
+            Starts the accept connection async operation.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.ProcessAccept(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Process the accept connection async operation.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.ProcessReceive(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Process the receive async operation on one <see cref="T:System.Net.Sockets.SocketAsyncEventArgs"/>.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.DispatchPackets(Ether.Network.NetConnection,System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Split and dispatch incoming packets to the <see cref="T:Ether.Network.NetConnection"/>.
+            </summary>
+            <param name="netConnection"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.SendData(Ether.Network.NetConnection,System.Byte[])">
+            <summary>
+            Send data to a <see cref="T:Ether.Network.NetConnection"/>.
+            </summary>
+            <param name="sender"></param>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.ProcessSendQueue">
+            <summary>
+            Process the send queue.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.Send(Ether.Network.PacketData)">
+            <summary>
+            Send the packet through the network.
+            </summary>
+            <param name="packet"></param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.ProcessSend(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Process the send async operation.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.IO_Completed(System.Object,System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Triggered when a <see cref="T:System.Net.Sockets.SocketAsyncEventArgs"/> async operation is completed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.Dispose(System.Boolean)">
+            <summary>
+            Dispose the <see cref="T:Ether.Network.NetServer`1"/> resources.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.Finalize">
+            <summary>
+            Destroys the <see cref="T:Ether.Network.NetServer`1"/> instance.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetServer`1.Dispose">
+            <summary>
+            Dispose the <see cref="T:Ether.Network.NetServer`1"/> resources.
+            </summary>
+        </member>
+        <member name="T:Ether.Network.NetServerConfiguration">
+            <summary>
+            Provide properties to configuration a <see cref="T:Ether.Network.NetServer`1"/>.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetServerConfiguration.Port">
+            <summary>
+            Gets or sets the port.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetServerConfiguration.Host">
+            <summary>
+            Gets or sets the host address.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetServerConfiguration.Backlog">
+            <summary>
+            Gets or sets the listening backlog.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetServerConfiguration.MaximumNumberOfConnections">
+            <summary>
+            Gets or sets the maximum number of simultaneous connections on the server.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetServerConfiguration.BufferSize">
+            <summary>
+            Gets or sets the buffer size.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.NetServerConfiguration.Address">
+            <summary>
+            Gets the listening address.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetServerConfiguration.#ctor">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.NetServerConfiguration"/>.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.NetServerConfiguration.#ctor(Ether.Network.INetServer)">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.NetServerConfiguration"/>.
+            </summary>
+            <param name="server">Server reference</param>
+        </member>
+        <member name="M:Ether.Network.NetServerConfiguration.SetValue``1(``0@,``0)">
+            <summary>
+            Set the value of a property passed as reference.
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="container"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:Ether.Network.PacketData">
+            <summary>
+            Defines the packet data structrure.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.PacketData.Sender">
+            <summary>
+            Gets the packet sender.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.PacketData.Data">
+            <summary>
+            Gets the packet data buffer.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.PacketData.#ctor(Ether.Network.NetConnection,System.Byte[])">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.NetConnection"/> object.
+            </summary>
+            <param name="sender">Packet sender</param>
+            <param name="data">Packet data</param>
+        </member>
+        <member name="M:Ether.Network.PacketData.Equals(Ether.Network.PacketData)">
+            <summary>
+            Compares two <see cref="T:Ether.Network.PacketData"/>.
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ether.Network.Packets.NetPacket">
+            <summary>
+            Represents a Ehter.Network built-in packet.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.Packets.NetPacket.Buffer">
+            <summary>
+            Gets the packet buffer.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Packets.NetPacket.#ctor">
+            <summary>
+            Creates a new NetPacket in write-only mode.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Packets.NetPacket.#ctor(System.Byte[])">
+            <summary>
+            Creates a new NetPacket in read-only mode.
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Ether.Network.Packets.NetPacket.Split(System.Byte[])">
+            <summary>
+            Split the incoming packets.
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ether.Network.Packets.NetPacketBase">
+            <summary>
+            NetPacketBase provides all methods to manage a packet at the memory level.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.Packets.NetPacketBase.MemoryStream">
+            <summary>
+            Packet memory stream.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.Packets.NetPacketBase.MemoryReader">
+            <summary>
+            Packet memory reader.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.Packets.NetPacketBase.MemoryWriter">
+            <summary>
+            Packet memory writer.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.Packets.NetPacketBase.Buffer">
+            <summary>
+            Gets the packet buffer.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.Packets.NetPacketBase.Size">
+            <summary>
+            Gets the size of the packet.
+            </summary>
+        </member>
+        <member name="P:Ether.Network.Packets.NetPacketBase.Position">
+            <summary>
+            Gets or sets the read/write position in the packet.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Packets.NetPacketBase.#ctor">
+            <summary>
+            Creates a new NetPacketBase in write-only mode.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Packets.NetPacketBase.#ctor(System.Byte[])">
+            <summary>
+            Creates a new NetPacketBase in read-only mode.
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Ether.Network.Packets.NetPacketBase.GetBuffer">
+            <summary>
+            Gets the packet buffer.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ether.Network.Packets.NetPacketBase.Write``1(``0)">
+            <summary>
+            Writes a T value in the packet.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <param name="value">Value.</param>
+        </member>
+        <member name="M:Ether.Network.Packets.NetPacketBase.Read``1">
+            <summary>
+            Reads a T value from the packet.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <returns>Value.</returns>
+        </member>
+        <member name="M:Ether.Network.Packets.NetPacketBase.Read``1(System.Int32)">
+            <summary>
+            Reads an array of T value from the packet.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <param name="amount">Amount to read.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ether.Network.Packets.NetPacketBase.Dispose">
+            <summary>
+            Dispose the NetPacketBase resources.
+            </summary>
+        </member>
+        <member name="F:Ether.Network.Packets.NetPacketMethods.ReadMethods">
+            <summary>
+            Read methods dictionary.
+            </summary>
+        </member>
+        <member name="F:Ether.Network.Packets.NetPacketMethods.WriteMethods">
+            <summary>
+            Write methods dictionary.
+            </summary>
+        </member>
+        <member name="T:Ether.Network.Utils.SocketAsyncEventArgsPool">
+            <summary>
+            Represents an object pool of <see cref="T:System.Net.Sockets.SocketAsyncEventArgs"/> elements.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Utils.SocketAsyncEventArgsPool.#ctor">
+            <summary>
+            Creates a new <see cref="T:Ether.Network.Utils.SocketAsyncEventArgsPool"/> instance with a maximal capacity.
+            </summary>
+        </member>
+        <member name="M:Ether.Network.Utils.SocketAsyncEventArgsPool.Pop">
+            <summary>
+            Pops a <see cref="T:System.Net.Sockets.SocketAsyncEventArgs"/> of the top of the stack.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ether.Network.Utils.SocketAsyncEventArgsPool.Push(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Push a <see cref="T:System.Net.Sockets.SocketAsyncEventArgs"/> to the top of the stack.
+            </summary>
+            <param name="socketAsyncEventArgs"></param>
+        </member>
+    </members>
+</doc>

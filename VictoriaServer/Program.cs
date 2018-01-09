@@ -2,7 +2,7 @@
 using System.Threading;
 using VictoriaServer.Networking;
 using VictoriaServer.Admin;
-using RamonBrand.Networking;
+using VictoriaShared.Networking;
 
 namespace VictoriaServer
 {

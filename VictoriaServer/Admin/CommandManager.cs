@@ -1,7 +1,7 @@
-﻿using RamonBrand.Networking;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using VictoriaShared.Networking;
 using VictoriaServer.Networking;
 
 namespace VictoriaServer.Admin

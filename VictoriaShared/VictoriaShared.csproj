@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.6;net46</TargetFrameworks>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Ether.Network">
+      <HintPath>..\Ether.Network.2.1.0-pre\lib\netstandard2.0\Ether.Network.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.6'">
+    <Reference Include="SharpLogger">
+      <HintPath>C:\Users\ramon\source\repos\SharpLogger\bin\Debug\netstandard1.0\SharpLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="Ether.Network">
+      <HintPath>..\Ether.Network.2.1.0-pre\lib\netstandard2.0\Ether.Network.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net46'">
+    <Reference Include="SharpLogger">
+      <HintPath>C:\Users\ramon\source\repos\SharpLogger\bin\Debug\net35\SharpLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="Ether.Network">
+      <HintPath>..\Ether.Network.2.1.0-pre\lib\net45\Ether.Network.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /Y &quot;$(ProjectDir)bin\$(ConfigurationName)\net46\*.dll&quot;  &quot;$(SolutionDir)..\VictoriaClient\Assets\&quot;" />
+  </Target>
+
+</Project>

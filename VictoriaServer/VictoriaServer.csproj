@@ -22,4 +22,8 @@
     <PackageReference Include="Ether.Network" Version="2.1.0-pre" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VictoriaShared\VictoriaShared.csproj" />
+  </ItemGroup>
+
 </Project>

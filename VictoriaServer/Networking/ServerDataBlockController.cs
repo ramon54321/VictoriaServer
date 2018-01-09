@@ -1,8 +1,8 @@
-﻿using RamonBrand.Networking;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using Ether.Network;
+using VictoriaShared.Networking;
 
 namespace VictoriaServer.Networking
 {

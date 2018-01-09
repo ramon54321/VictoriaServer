@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Ether.Network;
 using Ether.Network.Packets;
-using RamonBrand.Networking;
+using VictoriaShared.Networking;
 
 namespace VictoriaServer.Networking
 {
