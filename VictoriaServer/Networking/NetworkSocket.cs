@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Ether.Network;
-using Ether.Network.Packets;
+using SharpLogger;
 
 namespace VictoriaServer.Networking
 {
-    class Server : NetServer<Client>
+    class NetworkSocket : NetServer<Client>
     {
-        public Server()
+        private readonly NetworkManager _networkManager;
+
+        public NetworkSocket()
         {
+            this._networkManager = NetworkManager.GetInstance();
             this.Configuration.Backlog = 100;
             this.Configuration.Port = 8888;
             this.Configuration.MaximumNumberOfConnections = 16;
@@ -19,17 +20,17 @@ namespace VictoriaServer.Networking
 
         protected override void Initialize()
         {
-            Console.WriteLine("Server is listening.");
+            Logger.Log(LogLevel.L2_Info, "NetworkSocket is listening.", "Network");
         }
 
         protected override void OnClientConnected(Client client)
         {
-            NetworkManager.GetInstance().ClientConnected(client);
+            _networkManager.ClientConnected(client);
         }
 
         protected override void OnClientDisconnected(Client client)
         {
-            NetworkManager.GetInstance().ClientDisconnected(client);
+            _networkManager.ClientDisconnected(client);
         }
 
         protected override void OnError(Exception exception)

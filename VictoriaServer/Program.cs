@@ -1,46 +1,34 @@
 ﻿using System;
-using System.Threading;
-using VictoriaServer.Networking;
+using SharpLogger;
 using VictoriaServer.Admin;
+using VictoriaServer.Networking;
 using VictoriaServer.Game;
-using VictoriaShared.Game;
-using VictoriaShared.Networking;
 
 namespace VictoriaServer
 {
     class Program
     {
+        private static NetworkManager _networkManager;
+        private static ServerGameState _serverGameState;
+
         static void Main(string[] args)
         {
-            Test();
-
             Console.Title = "Project Victoria Server";
-            Console.WriteLine("\n --- Server Started --- \n");
+            Logger.SetPrinter(new Printer());
+            Logger.SetFilter("");
+            Logger.Log(LogLevel.L2_Info, "\n --- Server Started --- \n", "");
 
-            // -- Set up networking
-            Server server = new Server();
+            // -- Set up Networking
+            _networkManager = NetworkManager.GetInstance();
 
-            Thread networkThread = new Thread(delegate ()
-            {
-                server.Start();
-            });
-            networkThread.Name = "Network Thread";
-            networkThread.Start();
+            // -- Set up GameState
+            _serverGameState = ServerGameState.GetInstance();
 
-            // -- Set up gamestate
-            GameState gameState = ServerGameState.GetInstance();
-            
-
-            // -- Command loop
+            // -- Command loop -- Blocking!!!
             CommandManager commandManager = new CommandManager();
 
             // -- Close down
-            server.Stop();
-        }
-
-        private static void Test()
-        {
-
+            _networkManager.CloseSocket();
         }
     }
 }

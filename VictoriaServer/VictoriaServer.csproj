@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <Reference Include="SharpLogger">
-      <HintPath>C:\Users\ramon\source\repos\SharpLogger\bin\Debug\netstandard1.0\SharpLogger.dll</HintPath>
+      <HintPath>..\SharpLogger\netstandard1.0\SharpLogger.dll</HintPath>
     </Reference>
   </ItemGroup>
 
