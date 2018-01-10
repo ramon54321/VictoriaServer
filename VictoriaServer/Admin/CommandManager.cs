@@ -37,8 +37,8 @@ namespace VictoriaServer.Admin
         public static void SendDataBlock(string command)
         {
             string[] data = command.Split(';');
-            DataBlock dataBlock = new DataBlock(1,0,ushort.Parse(data[1]),data[2]);
-            NetworkManager.GetInstance().SendToAllClients(dataBlock);
+            //DataBlock dataBlock = new DataBlock(1,0,ushort.Parse(data[1]),data[2]);
+            //NetworkManager.GetInstance().SendToAllClients(dataBlock);
         }
     }
 }

@@ -2,6 +2,8 @@
 using System.Threading;
 using VictoriaServer.Networking;
 using VictoriaServer.Admin;
+using VictoriaServer.Game;
+using VictoriaShared.Game;
 using VictoriaShared.Networking;
 
 namespace VictoriaServer
@@ -24,6 +26,10 @@ namespace VictoriaServer
             });
             networkThread.Name = "Network Thread";
             networkThread.Start();
+
+            // -- Set up gamestate
+            GameState gameState = ServerGameState.GetInstance();
+            
 
             // -- Command loop
             CommandManager commandManager = new CommandManager();
